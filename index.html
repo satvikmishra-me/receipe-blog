@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yummy Corner | Recipe Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf5;
+            color: #222;
+            margin: 0;
+        }
+        header {
+            background: #f97316;
+            color: #fff;
+            text-align: center;
+            padding: 1.8em 1em;
+        }
+        header h1 {
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        nav {
+            background: #7c2d12;
+            text-align: center;
+            padding: 0.7em;
+        }
+        nav a {
+            color: #ffe4cc;
+            text-decoration: none;
+            margin: 0 1em;
+            font-size: 0.9rem;
+        }
+        .wrapper {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 0 1em 3em;
+        }
+        section {
+            margin-bottom: 2.3em;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6em;
+            color: #7c2d12;
+        }
+        .sub {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        /* Search + categories */
+        .search-box {
+            background: #ffffff;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            margin-bottom: 1.5em;
+        }
+        .search-box input[type="text"] {
+            width: 70%;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #f97316;
+        }
+        .search-box button {
+            padding: 7px 12px;
+            border: none;
+            border-radius: 4px;
+            background: #f97316;
+            color: #fff;
+            cursor: pointer;
+            margin-left: 0.5em;
+        }
+        .categories span {
+            display: inline-block;
+            background: #ffedd5;
+            color: #7c2d12;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin: 0.2em 0.2em 0 0;
+        }
+        /* Recipe cards */
+        .recipes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .recipe-card {
+            flex: 1 1 260px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1em;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+        }
+        .recipe-card h3 {
+            margin: 0 0 0.3em;
+            font-size: 1rem;
+        }
+        .recipe-card small {
+            color: #6b7280;
+        }
+        .rating {
+            margin-top: 0.4em;
+            color: #facc15; /* yellow stars */
+            font-size: 1rem;
+        }
+        /* User recipe form */
+        form label {
+            display: block;
+            margin: 0.5em 0 0.2em;
+            font-size: 0.9rem;
+        }
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            font-size: 0.9rem;
+        }
+        form input[type="submit"] {
+            width: auto;
+            margin-top: 0.8em;
+            background: #f97316;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 8px 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #7c2d12;
+            color: #fed7aa;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 600px) {
+            .wrapper { padding: 0 0.8em 2.5em; }
+            .search-box input[type="text"] { width: 100%; margin-bottom: 0.5em; }
+            .search-box button { width: 100%; margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YUMMY CORNER</h1>
+        <p class="sub">Simple recipes you can cook at home.</p>
+    </header>
+    <nav>
+        <a href="#browse">Browse Recipes</a>
+        <a href="#top">Top Rated</a>
+        <a href="#submit">Submit Recipe</a>
+    </nav>
+
+    <div class="wrapper">
+        <section id="browse">
+            <h2>Browse & Search</h2>
+            <div class="search-box">
+                <input type="text" placeholder="Search by recipe name or ingredient">
+                <button type="button">Search</button>
+                <p class="sub" style="margin-top:0.5em;">
+                    (Search button is for demo only and does not filter yet.)
+                </p>
+                <div class="categories">
+                    <span>Breakfast</span>
+                    <span>Lunch</span>
+                    <span>Dessert</span>
+                    <span>Drinks</span>
+                    <span>Vegetarian</span>
+                </div>
+            </div>
+
+            <div class="recipes">
+                <div class="recipe-card">
+                    <h3>Masala Maggie</h3>
+                    <small>Category: Snacks • Time: 10 min</small>
+                    <p>Quick spiced noodles with veggies, perfect for late-night hunger.</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="recipe-card">
+                    <h3>Cold Coffee</h3>
+                    <small>Category: Drinks • Time: 5 min</small>
+                    <p>Chilled, creamy coffee blended with ice and a hint of chocolate.</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+                <div class="recipe-card">
+                    <h3>Simple Veg Pulao</h3>
+                    <small>Category: Lunch • Time: 25 min</small>
+                    <p>Fragrant rice cooked with basic vegetables and light spices.</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="top">
+            <h2>Top Rated Recipe</h2>
+            <p class="sub">Based on average star ratings.</p>
+            <div class="recipe-card">
+                <h3>Chocolate Mug Cake</h3>
+                <small>Category: Dessert • Time: 3 min</small>
+                <p>One-bowl dessert cooked in a microwave mug, ideal for beginners.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+        </section>
+
+        <section id="submit">
+            <h2>Submit Your Recipe</h2>
+            <p class="sub">Share your favorite dish with the community.</p>
+            <form>
+                <label for="rname">Recipe Name</label>
+                <input type="text" id="rname" name="rname">
+
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Dessert</option>
+                    <option>Snacks</option>
+                    <option>Drinks</option>
+                </select>
+
+                <label for="ingredients">Ingredients</label>
+                <textarea id="ingredients" name="ingredients" rows="3" placeholder="List main ingredients"></textarea>
+
+                <label for="steps">Steps</label>
+                <textarea id="steps" name="steps" rows="4" placeholder="Write simple step-by-step instructions"></textarea>
+
+                <label for="rating">Your Rating (1–5)</label>
+                <input type="number" id="rating" name="rating" min="1" max="5">
+
+                <input type="submit" value="Send Recipe">
+            </form>
+            <p class="sub" style="margin-top:0.4em;">
+                (Form is for demo only and does not save recipes or ratings.)
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Yummy Corner Recipe Blog
+    </footer>
+</body>
+</html>
